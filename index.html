@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login Page</title>
-</head>
-<script type="text/javascript">
-	console.log("dadada")
-</script>
-<body>
-	<h1>Login Page</h1>
-	<!-- Login Form -->
-	<h2>Login</h2>
-	<form action="#" method="post">
-		<label for="username">Username:</label>
-		<input type="text" id="username" name="username"><br><br>
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="password"><br><br>
-		<input type="submit" value="Login">
-	</form>
-	<a href="sign_up.html">I don't have an account</a>
-</body>
+  <head>
+    <title>API Example</title>
+  </head>
+  <body>
+    <div id="data"></div>
+
+    <script>
+      fetch('http://localhost:8080/api/v1/person')
+        .then(response => response.json())
+        .then(data => {
+          const dataElement = document.getElementById('data');
+          dataElement.innerHTML = JSON.stringify(data);
+        });
+    </script>
+  </body>
 </html>
